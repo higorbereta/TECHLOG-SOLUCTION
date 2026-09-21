@@ -10,3 +10,13 @@ class ClientRepository():
             cursor.execute("SELECT id, nome, email, telefone FROM clientes")
             rows = cursor.fetchall()
             return [Cliente(id_=row[0], nome=row[1], email=row[2], telefone=row[3]) for row in rows]
+
+
+    async def get_client_by_id(self, client_id: int) -> Cliente | None:
+        with self.db.connect() as conn:
+            cursor = conn.cursor()
+            cursor.execute("SELECT id, nome, email, telefone FROM clientes WHERE id = ?", (client_id,))
+            row = cursor.fetchone()
+            if row:
+                return Cliente(id_=row[0], nome=row[1], email=row[2], telefone=row[3])
+            return None
