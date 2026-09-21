@@ -2,12 +2,12 @@ import sqlite3
 from contextlib import contextmanager
 
 class LocalDatabase():
-    def __init__(self, db_file):
-        self.db_file = db_file
+    def __init__(self, db_name="techlog.db"):
+        self.db_name = db_name
 
     @contextmanager
     def connect(self):
-        conn = sqlite3.connect(self.db_file)
+        conn = sqlite3.connect(self.db_name)
         try:
             yield conn
             conn.commit()

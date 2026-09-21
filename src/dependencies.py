@@ -5,6 +5,7 @@ from src.database.local import LocalDatabase
 from src.database.client_repository import ClientRepository
 
 database = LocalDatabase()
+database.initialize()
 
 def get_local_db() -> LocalDatabase:
     return database
