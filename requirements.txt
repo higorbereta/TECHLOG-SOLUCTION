@@ -1,4 +1,8 @@
 fastapi
 uvicorn
+<<<<<<< HEAD
 Jinja2
 python-multipart
+=======
+Jinja2
+>>>>>>> b7607a40c81873ad42807b0b011171c11a64d3f3

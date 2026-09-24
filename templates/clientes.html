@@ -24,8 +24,13 @@
             <tbody>
                 {% for cliente in clientes %}
                 <tr>
+<<<<<<< HEAD
                     <td>{{ cliente.id_ }}</td>
                     <td><a href="/clientes/{{ cliente.id_ }}">{{ cliente.nome }}</a></td>
+=======
+                    <td>{{ cliente.id }}</td>
+                    <td><a href="/clientes/{{ cliente.id }}">{{ cliente.nome }}</a></td>
+>>>>>>> b7607a40c81873ad42807b0b011171c11a64d3f3
                     <td>{{ cliente.email }}</td>
                     <td>{{ cliente.telefone }}</td>
                 </tr>

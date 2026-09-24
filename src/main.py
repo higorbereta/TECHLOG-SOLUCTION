@@ -8,17 +8,24 @@ from src.router import login_router as login
 
 templates = Jinja2Templates(directory="templates")
 
+templates = Jinja2Templates(directory="templates")
+
 app = FastAPI(
     title="Techlog Soluction API - ALURA PROJECT",
     description="Projeto aula FAST API da Alura",
     version="0.0.1"
 )
 
+<<<<<<< HEAD
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.include_router(cliente_router.router)
 app.include_router(cliente_router.front_router)
 app.include_router(login.router)
+=======
+app.include_router(cliente_router.router)
+app.mount("/static", StaticFiles(directory="static"), name="static")
+>>>>>>> b7607a40c81873ad42807b0b011171c11a64d3f3
 
 @app.get("/health")
 async def health():
